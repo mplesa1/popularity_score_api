@@ -1,0 +1,72 @@
+version: '3'
+
+services:
+    db:
+        image: postgres:9.6.12
+        container_name: ${COMPOSE_PROJECT_NAME}-postgresql-application
+        environment:
+            - POSTGRES_DB=${DATABASE_NAME}
+            - POSTGRES_USER=${DATABASE_USER}
+            - POSTGRES_PASSWORD=${DATABASE_PASSWORD}
+        volumes:
+            - db-data-postgres-popularity-score:/var/lib/postgresql/data
+        ports:
+            - "${DATABASE_EXTERNAL_PORT}:${DATABASE_PORT}"
+        networks:
+            - popularity-score
+        restart: unless-stopped
+    php:
+        build:
+            context: .
+            dockerfile: ./Dockerfile
+        container_name: ${COMPOSE_PROJECT_NAME}-php
+        restart: unless-stopped
+        environment:
+            - DB_CONNECTION=pgsql
+            - DB_HOST=${COMPOSE_PROJECT_NAME}-postgresql-application
+            - DB_DATABASE=${DATABASE_NAME}
+            - DB_PORT=${DATABASE_PORT}
+            - DB_USERNAME=${DATABASE_USER}
+            - DB_PASSWORD=${DATABASE_PASSWORD}
+            - APP_NAME=${APP_NAME}
+            - APP_ENV=${APP_ENV}
+            - APP_DEBUG=${APP_DEBUG}
+            - APP_URL=${APP_URL}
+            - GITHUB_BASE_URL=${GITHUB_BASE_URL}
+            - GITHUB_ACTION_URL=${GITHUB_ACTION_URL}
+        volumes:
+            - ../.:/var/www/application/
+        working_dir: /var/www/application/
+        depends_on:
+            - db
+        networks:
+            - popularity-score
+    nginx:
+        image: nginx:1.15-alpine
+        container_name: ${COMPOSE_PROJECT_NAME}-nginx
+        restart: unless-stopped
+        volumes:
+            - "./conf/${NGINX_CONF}:/etc/nginx/conf.d"
+            - ../.:/var/www/application/
+        ports:
+            - "${NGINX_EXTERNAL_PORT}:${NGINX_PORT}"
+        networks:
+            - popularity-score
+        depends_on:
+            - php
+    composer:
+        image: composer:1.8
+        volumes:
+            - ../.:/var/www/application/
+        container_name: ${COMPOSE_PROJECT_NAME}-composer
+        networks:
+            - popularity-score
+        working_dir: /var/www/application/
+        command: install
+
+volumes:
+    db-data-postgres-popularity-score:
+
+networks:
+    popularity-score:
+        driver: bridge
