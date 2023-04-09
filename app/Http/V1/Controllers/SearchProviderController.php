@@ -20,7 +20,7 @@ class SearchProviderController extends Controller
     public function index()
     {
         return response()->success(
-            trans('messages.search_providers'),
+            trans('messages.search_providers_loaded'),
             $this->searchProviderService->findAll()
         );
     }

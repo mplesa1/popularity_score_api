@@ -24,7 +24,7 @@ class SearchResultRequest extends FormRequest
     public function rules()
     {
         return [
-            'keyword' => 'required|string',
+            'keyword' => 'required|string|min:1|max:50',
             'search_provider_id' => 'required|int|exists:search_providers,id',
         ];
     }

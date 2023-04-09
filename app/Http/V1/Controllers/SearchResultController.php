@@ -21,7 +21,7 @@ class SearchResultController extends Controller
     public function search(SearchResultRequest $request)
     {
         return response()->success(
-            trans('messages.search_results'),
+            trans('messages.search_result_loaded'),
             $this->searchResultService->search($request)
         );
     }

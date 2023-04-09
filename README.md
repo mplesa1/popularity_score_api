@@ -66,7 +66,7 @@ Response:
 {
     "code": 200,
     "response": {
-        "msg": "messages.search_providers",
+        "msg": "Search providers loaded",
         "payload": [
             {
                 "id": 1,
@@ -96,7 +96,7 @@ Response:
 {
     "code": 200,
     "response": {
-        "msg": "messages.search_results",
+        "msg": "Search result loaded",
         "payload": {
             "id": 1,
             "keyword": "laravel",
