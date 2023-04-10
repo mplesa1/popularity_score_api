@@ -2,8 +2,8 @@
 
 namespace App\Services;
 
-use App\Http\V1\Requests\SearchResultRequest;
-use App\Http\V1\Resources\SearchResultResource;
+use App\Http\Requests\SearchResultRequest;
+use App\Http\Resources\SearchResultResource;
 
 interface SearchResultServiceInterface
 {

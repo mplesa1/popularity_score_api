@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\V1\Resources;
+namespace App\Http\Resources;
 
 use App\Models\SearchResult;
 use Illuminate\Http\Resources\Json\JsonResource;

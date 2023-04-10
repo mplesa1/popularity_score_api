@@ -4,8 +4,8 @@ namespace App\Services;
 
 use App\Exceptions\GithubApiException;
 use App\Exceptions\NotImplementedException;
-use App\Http\V1\Requests\SearchResultRequest;
-use App\Http\V1\Resources\SearchResultResource;
+use App\Http\Requests\SearchResultRequest;
+use App\Http\Resources\SearchResultResource;
 use App\Models\SearchResult;
 use App\Repositories\SearchResultRepositoryInterface;
 use App\Services\SearchProviders\SearchProviderFactory;

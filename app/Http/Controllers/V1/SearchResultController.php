@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\V1\Controllers;
+namespace App\Http\Controllers\V1;
 
-use App\Http\V1\Requests\SearchResultRequest;
+use App\Http\Requests\SearchResultRequest;
 use App\Services\SearchResultServiceInterface;
 
 class SearchResultController extends Controller

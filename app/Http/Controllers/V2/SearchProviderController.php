@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\V1\Controllers;
+namespace App\Http\Controllers\V2;
 
 use App\Services\SearchProviderServiceInterface;
 

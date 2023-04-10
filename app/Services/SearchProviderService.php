@@ -2,7 +2,7 @@
 
 namespace App\Services;
 
-use App\Http\V1\Resources\SearchProviderResource;
+use App\Http\Resources\SearchProviderResource;
 use App\Repositories\SearchProviderRepositoryInterface;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 
