@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Services;
+namespace App\Services;
 
 use App\Http\V1\Requests\SearchResultRequest;
 use App\Http\V1\Resources\SearchResultResource;

@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Http\Services;
+namespace App\Services;
 
 use App\Exceptions\GithubApiException;
 use App\Exceptions\NotImplementedException;
-use App\Http\Repositories\SearchResultRepositoryInterface;
-use App\Http\SearchProviders\SearchProviderFactory;
 use App\Http\V1\Requests\SearchResultRequest;
 use App\Http\V1\Resources\SearchResultResource;
 use App\Models\SearchResult;
+use App\Repositories\SearchResultRepositoryInterface;
+use App\Services\SearchProviders\SearchProviderFactory;
 
 final class SearchResultService implements SearchResultServiceInterface
 {

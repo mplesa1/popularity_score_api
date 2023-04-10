@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\SearchProviders;
+namespace App\Services\SearchProviders;
 
 
 abstract class SearchProvider implements SearchProviderInterface

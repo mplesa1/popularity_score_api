@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Services;
+namespace App\Services;
 
-use App\Http\Repositories\SearchProviderRepositoryInterface;
 use App\Http\V1\Resources\SearchProviderResource;
+use App\Repositories\SearchProviderRepositoryInterface;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 
 final class SearchProviderService implements SearchProviderServiceInterface

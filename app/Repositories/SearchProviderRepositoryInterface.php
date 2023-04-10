@@ -1,8 +1,7 @@
 <?php
 
-namespace App\Http\Repositories;
+namespace App\Repositories;
 
-use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Collection;
 
 interface SearchProviderRepositoryInterface

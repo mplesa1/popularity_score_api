@@ -2,14 +2,14 @@
 
 namespace App\Providers;
 
-use App\Http\Repositories\SearchProviderRepository;
-use App\Http\Repositories\SearchProviderRepositoryInterface;
-use App\Http\Repositories\SearchResultRepository;
-use App\Http\Repositories\SearchResultRepositoryInterface;
-use App\Http\Services\SearchProviderService;
-use App\Http\Services\SearchProviderServiceInterface;
-use App\Http\Services\SearchResultService;
-use App\Http\Services\SearchResultServiceInterface;
+use App\Repositories\SearchProviderRepository;
+use App\Repositories\SearchProviderRepositoryInterface;
+use App\Repositories\SearchResultRepository;
+use App\Repositories\SearchResultRepositoryInterface;
+use App\Services\SearchProviderService;
+use App\Services\SearchProviderServiceInterface;
+use App\Services\SearchResultService;
+use App\Services\SearchResultServiceInterface;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider

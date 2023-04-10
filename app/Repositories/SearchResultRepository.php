@@ -1,10 +1,8 @@
 <?php
 
-namespace App\Http\Repositories;
+namespace App\Repositories;
 
-use App\Models\SearchProvider;
 use App\Models\SearchResult;
-use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 
 final class SearchResultRepository implements SearchResultRepositoryInterface
