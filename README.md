@@ -6,7 +6,7 @@ Before you begin, ensure you have met the following requirements:
 
 If you are installing project locally make sure that:
 * You have installed [composer](https://getcomposer.org/)
-* You have installed [php](https://www.php.net/downloads.php) version: >=8.1
+* You have installed [php](https://www.php.net/downloads.php) version: >=8.2
 * You have installed [postgreSQL](https://www.postgresql.org/)
 
 ## Installing the project
