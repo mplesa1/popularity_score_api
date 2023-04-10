@@ -5,7 +5,7 @@ namespace App\Http\Services;
 use App\Exceptions\GithubApiException;
 use App\Exceptions\NotImplementedException;
 use App\Http\Repositories\SearchResultRepositoryInterface;
-use App\Http\SearchProviders\SearchProviderCore;
+use App\Http\SearchProviders\SearchProvider;
 use App\Http\V1\Requests\SearchResultRequest;
 use App\Http\V1\Resources\SearchResultResource;
 use App\Models\SearchResult;
@@ -27,7 +27,7 @@ final class SearchResultService implements SearchResultServiceInterface
         $data = $request->all();
         $searchResult = $this->searchResultRepository->findByKeywordAndSearchProvider($data['keyword'], $data['search_provider_id']);
         if (is_null($searchResult)) {
-            $searchProvider = SearchProviderCore::createProvider($data['search_provider_id']);
+            $searchProvider = SearchProvider::createProvider($data['search_provider_id']);
             $searchResult = new SearchResult();
             $searchResult->search_provider_id = $data['search_provider_id'];
             $searchResult->keyword = $data['keyword'];

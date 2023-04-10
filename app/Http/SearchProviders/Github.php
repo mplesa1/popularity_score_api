@@ -6,7 +6,7 @@ namespace App\Http\SearchProviders;
 use App\Exceptions\GithubApiException;
 use Illuminate\Support\Facades\Http;
 
-final class Github extends SearchProviderCore
+final class Github extends SearchProvider
 {
     /**
      * @throws GithubApiException

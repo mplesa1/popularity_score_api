@@ -6,7 +6,7 @@ namespace App\Http\SearchProviders;
 use App\Enums\SearchProviderEnum;
 use App\Exceptions\NotImplementedException;
 
-abstract class SearchProviderCore implements SearchProviderCoreInterface
+abstract class SearchProvider implements SearchProviderInterface
 {
     protected string $searchActionUrl;
 
@@ -18,7 +18,7 @@ abstract class SearchProviderCore implements SearchProviderCoreInterface
     /**
      * @throws NotImplementedException
      */
-    public static function createProvider(int $searchProviderId): SearchProviderCoreInterface{
+    public static function createProvider(int $searchProviderId): SearchProviderInterface{
         switch ($searchProviderId) {
             case SearchProviderEnum::GITHUB->value:
                 $searchProvider = new Github(sprintf('%s%s', env('GITHUB_BASE_URL'), env('GITHUB_ACTION_URL')));

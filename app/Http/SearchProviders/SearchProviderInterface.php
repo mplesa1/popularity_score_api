@@ -4,7 +4,7 @@ namespace App\Http\SearchProviders;
 
 use App\Exceptions\GithubApiException;
 
-interface SearchProviderCoreInterface
+interface SearchProviderInterface
 {
     /**
      * @throws GithubApiException
