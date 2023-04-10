@@ -6,10 +6,10 @@ use App\Http\Resources\SearchProviderResource;
 use App\Repositories\SearchProviderRepositoryInterface;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 
-final class SearchProviderService implements SearchProviderServiceInterface
+final readonly class SearchProviderService implements SearchProviderServiceInterface
 {
     public function __construct(
-        private readonly SearchProviderRepositoryInterface $searchProviderRepository
+        private SearchProviderRepositoryInterface $searchProviderRepository
     )
     {
     }

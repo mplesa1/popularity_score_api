@@ -10,10 +10,10 @@ use App\Models\SearchResult;
 use App\Repositories\SearchResultRepositoryInterface;
 use App\Services\SearchProviders\SearchProviderFactory;
 
-final class SearchResultService implements SearchResultServiceInterface
+final readonly class SearchResultService implements SearchResultServiceInterface
 {
     public function __construct(
-        private readonly SearchResultRepositoryInterface $searchResultRepository
+        private SearchResultRepositoryInterface $searchResultRepository
     )
     {
     }
