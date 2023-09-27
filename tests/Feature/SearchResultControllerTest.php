@@ -9,7 +9,7 @@ class SearchResultControllerTest extends TestCase
     public function testSearchAction(): void
     {
         $request = [
-            'search_provider_id'=>1,
+            'word_provider_id'=>1,
             'keyword'=>'php'
         ];
         $response = $this->post('api/v1/search_results', $request);
@@ -22,14 +22,14 @@ class SearchResultControllerTest extends TestCase
         $this->assertIsInt($responseData['response']['payload']['count']);
         $this->assertIsInt($responseData['response']['payload']['positive_count']);
         $this->assertIsInt($responseData['response']['payload']['negative_count']);
-        $this->assertIsInt($responseData['response']['payload']['search_provider_id']);
+        $this->assertIsInt($responseData['response']['payload']['word_provider_id']);
         $this->assertNotNull($responseData['response']['payload']['score']);
     }
 
     public function testThatSearchActionWithoutKeywordWillReturnValidationError(): void
     {
         $request = [
-            'search_provider_id'=>1,
+            'word_provider_id'=>1,
         ];
         $response = $this->post('api/v1/search_results', $request);
 
@@ -51,14 +51,14 @@ class SearchResultControllerTest extends TestCase
         $responseData = $response->decodeResponseJson()->json();
         $this->assertNotNull($responseData['error']);
         $this->assertSame('Validation error',$responseData['error']['display']['msg']);
-        $this->assertSame('The search provider id field is required.',$responseData['error']['api_errors']['search_provider_id'][0]);
+        $this->assertSame('The search provider id field is required.',$responseData['error']['api_errors']['word_provider_id'][0]);
     }
 
     public function testThatSearchActionWithInvalidSearchProviderIdWillReturnValidationError(): void
     {
         $request = [
             'keyword'=>'php',
-            'search_provider_id'=>1234,
+            'word_provider_id'=>1234,
         ];
         $response = $this->post('api/v1/search_results', $request);
 
@@ -66,14 +66,14 @@ class SearchResultControllerTest extends TestCase
         $responseData = $response->decodeResponseJson()->json();
         $this->assertNotNull($responseData['error']);
         $this->assertSame('Validation error',$responseData['error']['display']['msg']);
-        $this->assertSame('The selected search provider id is invalid.',$responseData['error']['api_errors']['search_provider_id'][0]);
+        $this->assertSame('The selected search provider id is invalid.',$responseData['error']['api_errors']['word_provider_id'][0]);
     }
 
     public function testThatSearchActionWithNotImplementedSearchProviderIdWillReturnInternalError(): void
     {
         $request = [
             'keyword'=>'php',
-            'search_provider_id'=>2,
+            'word_provider_id'=>2,
         ];
         $response = $this->post('api/v1/search_results', $request);
 

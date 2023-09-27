@@ -2,14 +2,14 @@
 
 namespace App\Providers;
 
-use App\Repositories\SearchProviderRepository;
-use App\Repositories\SearchProviderRepositoryInterface;
-use App\Repositories\SearchResultRepository;
-use App\Repositories\SearchResultRepositoryInterface;
-use App\Services\SearchProviderService;
-use App\Services\SearchProviderServiceInterface;
-use App\Services\SearchResultService;
-use App\Services\SearchResultServiceInterface;
+use App\Modules\Word\Repositories\Postgres\WordProviderRepository;
+use App\Modules\Word\Repositories\Postgres\WordResultRepository;
+use App\Modules\Word\Repositories\WordProviderRepositoryInterface;
+use App\Modules\Word\Repositories\WordResultRepositoryInterface;
+use App\Modules\Word\Services\SearchProviderService;
+use App\Modules\Word\Services\SearchProviderServiceInterface;
+use App\Modules\Word\Services\SearchResultService;
+use App\Modules\Word\Services\SearchResultServiceInterface;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -21,14 +21,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        // Repositories
-        $this->app->bind(SearchProviderRepositoryInterface::class, SearchProviderRepository::class);
-        $this->app->bind(SearchResultRepositoryInterface::class, SearchResultRepository::class);
-
-        // Services
-        $this->app->bind(SearchResultServiceInterface::class, SearchResultService::class);
-        $this->app->bind(SearchProviderServiceInterface::class, SearchProviderService::class);
-
+        //
     }
 
     /**

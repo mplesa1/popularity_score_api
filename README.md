@@ -89,7 +89,7 @@ Run search with desired keyword and search provider
 POST localhost/api/v1/search_results
 Request:
 {
-    "search_provider_id": 1,
+    "word_provider_id": 1,
     "keyword": "laravel"
 }
 Response:
@@ -104,7 +104,7 @@ Response:
             "positive_count": 134,
             "negative_count": 374,
             "score": 0.0019456269855558977,
-            "search_provider_id": 1,
+            "word_provider_id": 1,
             "search_provider": null,
             "created_at": "2023-04-09T01:04:11.000000Z",
             "updated_at": "2023-04-09T01:04:11.000000Z"

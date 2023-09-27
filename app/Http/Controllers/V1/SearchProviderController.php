@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\V1;
 
-use App\Services\SearchProviderServiceInterface;
+use App\Modules\Word\Services\SearchProviderServiceInterface;
 
 class SearchProviderController extends Controller
 {

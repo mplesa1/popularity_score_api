@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\V1;
 
-use App\Http\Requests\SearchResultRequest;
-use App\Services\SearchResultServiceInterface;
+use App\Modules\Word\Requests\SearchResultRequest;
+use App\Modules\Word\Services\SearchResultServiceInterface;
 
 class SearchResultController extends Controller
 {
