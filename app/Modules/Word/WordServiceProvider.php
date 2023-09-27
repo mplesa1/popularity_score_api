@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Modules\Articles;
+namespace App\Modules\Word;
 
 use App\Modules\Word\Repositories\Postgres\WordProviderRepository;
 use App\Modules\Word\Repositories\Postgres\WordResultRepository;

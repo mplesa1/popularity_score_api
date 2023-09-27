@@ -203,7 +203,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         App\Providers\ResponseServiceProvider::class,
-
+        \App\Modules\Word\WordServiceProvider::class,
     ],
 
     /*
