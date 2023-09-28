@@ -204,6 +204,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         App\Providers\ResponseServiceProvider::class,
         \App\Modules\Word\WordServiceProvider::class,
+        \App\Modules\Warehouse\ProductServiceProvider::class,
     ],
 
     /*

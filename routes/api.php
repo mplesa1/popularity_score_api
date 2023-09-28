@@ -24,6 +24,8 @@ JsonApiRoute::server('v1')
     ->prefix('v1')
     ->resources(function (LaravelJsonApiResourceRegistrar $server): void {
         $server->resource('wordProviders', JsonApiController::class);
+        $server->resource('products', JsonApiController::class);
+        $server->resource('productVariants', JsonApiController::class);
     });
 
 $router->get('v1/word-results/search', WordResultController::class);

@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace App\JsonApi\V1;
 
+use App\Modules\Warehouse\JsonApi\V1\ProductSchema;
+use App\Modules\Warehouse\JsonApi\V1\ProductVariantSchema;
 use App\Modules\Word\JsonApi\V1\WordProviderSchema;
 use App\Modules\Word\JsonApi\V1\WordResultSchema;
 use LaravelJsonApi\Core\Server\Server as BaseServer;
@@ -20,6 +22,8 @@ final class Server extends BaseServer
         return [
             WordResultSchema::class,
             WordProviderSchema::class,
+            ProductSchema::class,
+            ProductVariantSchema::class,
         ];
     }
 }
