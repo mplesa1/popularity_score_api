@@ -10,7 +10,6 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 /**
  * @property int $id
  * @property string $keyword
- * @property int $count
  * @property int $positive_count
  * @property int $negative_count
  * @property int $word_provider_id
@@ -29,7 +28,7 @@ class WordResult extends Model
      * @var array
      */
     protected $fillable = [
-        'keyword', 'count', 'positive_count', 'negative_count', 'word_provider_id'
+        'keyword', 'positive_count', 'negative_count', 'word_provider_id'
     ];
 
     public function wordProvider(): BelongsTo

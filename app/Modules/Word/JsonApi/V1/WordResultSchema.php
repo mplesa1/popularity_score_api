@@ -36,7 +36,6 @@ final class WordResultSchema extends Schema
         return [
             ID::make(),
             BelongsTo::make('wordProvider')->type('wordProviders'),
-            Number::make('count'),
             Number::make('positive_count'),
             Number::make('negative_count'),
             Number::make('score'),

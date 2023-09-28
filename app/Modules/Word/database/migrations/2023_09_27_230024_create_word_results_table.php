@@ -14,7 +14,6 @@ return new class extends Migration
         Schema::create('word_results', function (Blueprint $table) {
             $table->id();
             $table->string('keyword');
-            $table->integer('count');
             $table->integer('positive_count');
             $table->integer('negative_count');
             $table->float('score');

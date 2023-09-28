@@ -1,8 +1,12 @@
 <?php
 
+use App\Modules\Word\JsonApi\V1\WordResultController;
+use Illuminate\Contracts\Routing\Registrar;
 use LaravelJsonApi\Laravel\Facades\JsonApiRoute;
 use LaravelJsonApi\Laravel\Http\Controllers\JsonApiController;
 use LaravelJsonApi\Laravel\Routing\ResourceRegistrar as LaravelJsonApiResourceRegistrar;
+
+/** @var Registrar $router */
 
 
 /*
@@ -19,6 +23,7 @@ use LaravelJsonApi\Laravel\Routing\ResourceRegistrar as LaravelJsonApiResourceRe
 JsonApiRoute::server('v1')
     ->prefix('v1')
     ->resources(function (LaravelJsonApiResourceRegistrar $server): void {
-        $server->resource('wordResults', JsonApiController::class);
         $server->resource('wordProviders', JsonApiController::class);
     });
+
+$router->get('v1/word-results/search', WordResultController::class);

@@ -8,8 +8,8 @@ use App\Modules\Word\Repositories\WordProviderRepositoryInterface;
 use App\Modules\Word\Repositories\WordResultRepositoryInterface;
 use App\Modules\Word\Services\SearchProviderService;
 use App\Modules\Word\Services\SearchProviderServiceInterface;
-use App\Modules\Word\Services\SearchResultService;
-use App\Modules\Word\Services\SearchResultServiceInterface;
+use App\Modules\Word\Services\WordResultService;
+use App\Modules\Word\Services\WordResultServiceInterface;
 use Illuminate\Support\ServiceProvider;
 
 class WordServiceProvider extends ServiceProvider
@@ -24,8 +24,7 @@ class WordServiceProvider extends ServiceProvider
         $this->app->bind(WordResultRepositoryInterface::class, WordResultRepository::class);
 
         // Services
-        $this->app->bind(SearchResultServiceInterface::class, SearchResultService::class);
-        $this->app->bind(SearchProviderServiceInterface::class, SearchProviderService::class);
+        $this->app->bind(WordResultServiceInterface::class, WordResultService::class);
     }
 
     /**
