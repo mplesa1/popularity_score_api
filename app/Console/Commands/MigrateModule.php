@@ -32,7 +32,7 @@ class MigrateModule extends Command
 
         // Ensure the directory exists
         if (!is_dir($moduleMigrationsPath)) {
-            $this->error("The module $module does not exist or does not have a Migrations directory.");
+            $this->error("The module $module does not exist or does not have a migrations directory.");
             return;
         }
 

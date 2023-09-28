@@ -27,10 +27,10 @@ class MakeModuleMigration extends Command
      */
     public function handle()
     {
-        $moduleName = $this->argument('module');
+        $module = $this->argument('module');
         $migrationName = $this->argument('name');
 
-        $relativePath = "app/Modules/$moduleName/database/migrations";
+        $relativePath = "app/Modules/$module/database/migrations";
         $moduleMigrationsPath = base_path($relativePath);
 
         // Ensure the directory exists
@@ -64,6 +64,6 @@ class MakeModuleMigration extends Command
             '--path' => $relativePath
         ]);
 
-        $this->info("Migration created: $migrationFileName in module: $moduleName");
+        $this->info("Migration created: $migrationFileName in module: $module");
     }
 }
