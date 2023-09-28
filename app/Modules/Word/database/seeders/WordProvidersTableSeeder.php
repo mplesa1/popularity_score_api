@@ -1,6 +1,6 @@
 <?php
 
-namespace Database\Seeders;
+namespace App\Modules\Word\Database\Seeders;
 
 use App\Modules\Word\Models\WordProvider;
 use Carbon\Carbon;
@@ -13,7 +13,7 @@ class WordProvidersTableSeeder extends Seeder
      */
     public function run()
     {
-        $filename = database_path('seeders/data/word_providers.json');
+        $filename = __DIR__. '/data/word_providers.json';
         $data = json_decode(file_get_contents($filename));
         $wordProviders = [];
         foreach ($data as $sp) {
